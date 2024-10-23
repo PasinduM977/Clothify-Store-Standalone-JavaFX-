@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="282.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.defaultDashboardFormController">
+   <children>
+      <Label layoutX="48.0" layoutY="35.0" prefHeight="18.0" prefWidth="205.0" text="Clothify Store-Default Dashboard" />
+      <Label fx:id="lblUserName" layoutX="198.0" layoutY="377.0" prefHeight="18.0" prefWidth="79.0" text="UserName" />
+      <JFXButton layoutX="61.0" layoutY="79.0" onAction="#btnManageProductOnAction" prefHeight="34.0" prefWidth="162.0" text="Manage Products" />
+      <JFXButton layoutX="61.0" layoutY="123.0" onAction="#btnManageOrdersOnAction" prefHeight="34.0" prefWidth="162.0" text="Manage Orders" />
+      <JFXButton layoutX="61.0" layoutY="175.0" onAction="#btnManageSuppllersOnAction" prefHeight="34.0" prefWidth="162.0" text="Manage Suppliers" />
+   </children>
+</AnchorPane>

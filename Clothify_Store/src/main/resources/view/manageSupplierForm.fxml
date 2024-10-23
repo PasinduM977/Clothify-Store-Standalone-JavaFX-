@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="395.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.manageSupplierFormController">
+   <children>
+      <Label layoutX="197.0" layoutY="11.0" prefHeight="24.0" prefWidth="197.0" text="Clotify Store-Manage Supplier" />
+      <TextField fx:id="txtName" layoutX="98.0" layoutY="84.0" prefHeight="26.0" prefWidth="85.0" text="Name" />
+      <TextField fx:id="txtCompany" layoutX="190.0" layoutY="84.0" prefHeight="26.0" prefWidth="98.0" text="Company" />
+      <TextField fx:id="txtEmail" layoutX="296.0" layoutY="84.0" prefHeight="26.0" prefWidth="133.0" text="Email" />
+      <JFXButton layoutX="20.0" layoutY="356.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="106.0" text="Add" />
+      <JFXButton layoutX="154.0" layoutY="356.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="106.0" text="Update" />
+      <JFXButton layoutX="273.0" layoutY="356.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="106.0" text="Delete" />
+      <JFXButton layoutX="474.0" layoutY="356.0" onAction="#btnHomeOnAction" prefHeight="26.0" prefWidth="106.0" text="Home" />
+      <TableView fx:id="tblSupplier" layoutX="10.0" layoutY="146.0" prefHeight="176.0" prefWidth="422.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="68.79998779296875" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="112.800048828125" text="Name" />
+            <TableColumn fx:id="colCompany" prefWidth="101.60003662109375" text="Company" />
+            <TableColumn fx:id="colEmail" prefWidth="135.20001220703125" text="Email" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="380.0" layoutY="356.0" onAction="#btnSearchOnAction" prefHeight="26.0" prefWidth="86.0" text="Search" />
+      <Label fx:id="lblDate1" layoutX="520.0" layoutY="85.0" prefHeight="24.0" prefWidth="98.0" text="Product List" />
+      <TableView fx:id="tblProduct" layoutX="443.0" layoutY="146.0" prefHeight="176.0" prefWidth="230.0">
+         <columns>
+            <TableColumn fx:id="colproductID" prefWidth="95.99990844726562" text="Product ID" />
+            <TableColumn fx:id="colProductName" prefWidth="140.800048828125" text="Product Name" />
+         </columns>
+      </TableView>
+      <JFXComboBox fx:id="cmbSupplierID" layoutX="20.0" layoutY="85.0" prefHeight="26.0" prefWidth="62.0" promptText="ID" />
+   </children>
+</AnchorPane>

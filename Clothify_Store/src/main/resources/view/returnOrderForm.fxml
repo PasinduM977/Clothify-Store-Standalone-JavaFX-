@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.returnOrderFormController">
+   <children>
+      <Label layoutX="194.0" layoutY="14.0" prefHeight="24.0" prefWidth="197.0" text="Clotify Store-Return Order" />
+      <Label fx:id="lblDate" layoutX="457.0" layoutY="38.0" prefHeight="24.0" prefWidth="45.0" text="Date" />
+      <Label fx:id="lblTime" layoutX="533.0" layoutY="38.0" prefHeight="24.0" prefWidth="45.0" text="Time" />
+      <TextField fx:id="txtSearchOrderID" layoutX="89.0" layoutY="87.0" prefHeight="26.0" prefWidth="85.0" text="type here..." />
+      <JFXButton layoutX="270.0" layoutY="359.0" onAction="#btnReturnOrderOnAction" prefHeight="26.0" prefWidth="106.0" text="Return Order" />
+      <JFXButton layoutX="471.0" layoutY="359.0" onAction="#btnHomeOnAction" prefHeight="26.0" prefWidth="106.0" text="Home" />
+      <TableView fx:id="tblEmployee" layoutX="7.0" layoutY="129.0" prefHeight="176.0" prefWidth="576.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="68.79998779296875" text="ID" />
+            <TableColumn fx:id="colTotalPrice" prefWidth="89.60003662109375" text="Total Price" />
+            <TableColumn fx:id="colEmployeeID" prefWidth="91.20001220703125" text="Employee ID" />
+            <TableColumn fx:id="colEmployeeName" prefWidth="142.4000244140625" text="Employee Name" />
+            <TableColumn fx:id="colPaymentType" prefWidth="92.79998779296875" text="Payment Type" />
+            <TableColumn fx:id="colDate" prefWidth="92.79998779296875" text="Date" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="217.0" layoutY="87.0" onAction="#btnSearchByOrderIDOnAction" prefHeight="26.0" prefWidth="149.0" text="Search By Order ID" />
+   </children>
+</AnchorPane>
