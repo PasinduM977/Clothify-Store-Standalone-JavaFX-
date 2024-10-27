@@ -14,22 +14,23 @@
       <Label fx:id="lblDate" layoutX="467.0" layoutY="42.0" prefHeight="24.0" prefWidth="45.0" text="Date" />
       <Label fx:id="lblTime" layoutX="543.0" layoutY="42.0" prefHeight="24.0" prefWidth="45.0" text="Time" />
       <TextField fx:id="txtProductName" layoutX="137.0" layoutY="91.0" prefHeight="26.0" prefWidth="133.0" text="Product Name" />
-      <TextField fx:id="txtPassword" layoutX="361.0" layoutY="91.0" prefHeight="26.0" prefWidth="78.0" text="Adding Qty" />
+      <TextField fx:id="txtAddingQty" layoutX="361.0" layoutY="91.0" prefHeight="26.0" prefWidth="78.0" text="Adding Qty" />
       <JFXButton layoutX="453.0" layoutY="90.0" onAction="#btnAddToCartOnAction" prefHeight="26.0" prefWidth="134.0" text="Add to Cart" />
       <JFXButton layoutX="453.0" layoutY="363.0" onAction="#btnHomeOnAction" prefHeight="26.0" prefWidth="134.0" text="Home" />
       <TableView fx:id="tblCart" layoutX="17.0" layoutY="132.0" prefHeight="176.0" prefWidth="576.0">
          <columns>
-            <TableColumn fx:id="colProductName" prefWidth="175.20001220703125" text="Product Name" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="132.0" text="Unit Price" />
-            <TableColumn fx:id="colQty" prefWidth="101.5999755859375" text="Qty" />
-            <TableColumn fx:id="colTotal" prefWidth="168.0001220703125" text="Total" />
+            <TableColumn fx:id="colProductName" prefWidth="150.4000244140625" text="Product Name" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="101.5999755859375" text="Unit Price" />
+            <TableColumn fx:id="colQty" minWidth="4.00006103515625" prefWidth="82.4000244140625" text="Qty" />
+            <TableColumn fx:id="colTotal" minWidth="3.20001220703125" prefWidth="128.7999267578125" text="Total" />
+            <TableColumn fx:id="colProductID" prefWidth="108.80010986328125" text="Product ID" />
          </columns>
       </TableView>
       <JFXComboBox fx:id="cmbProductID" layoutX="29.0" layoutY="90.0" prefHeight="26.0" prefWidth="96.0" promptText="Product ID" />
       <Label fx:id="lblAvailableQty" layoutX="283.0" layoutY="92.0" prefHeight="24.0" prefWidth="78.0" text="Avilable Qty" />
       <TextField fx:id="txtCustomerName" layoutX="17.0" layoutY="318.0" prefHeight="26.0" prefWidth="133.0" text="Customer Name" />
       <TextField fx:id="txtCustomerEmail" layoutX="159.0" layoutY="318.0" prefHeight="26.0" prefWidth="133.0" text="Customer Email" />
-      <JFXComboBox layoutX="322.0" layoutY="318.0" prefHeight="26.0" prefWidth="106.0" promptText="Payment Type" />
+      <JFXComboBox fx:id="cmbPaymentType" layoutX="322.0" layoutY="318.0" prefHeight="26.0" prefWidth="106.0" promptText="Payment Type" />
       <JFXButton layoutX="453.0" layoutY="318.0" onAction="#btnPlaceOrderOnAction" prefHeight="26.0" prefWidth="134.0" text="Place Order" />
       <JFXButton layoutX="235.0" layoutY="359.0" onAction="#btnReturnOrderOnAction" prefHeight="26.0" prefWidth="134.0" text="Return Orders" />
       <Label fx:id="lblNetTotal" layoutX="17.0" layoutY="360.0" prefHeight="24.0" prefWidth="78.0" text="Net Total" />

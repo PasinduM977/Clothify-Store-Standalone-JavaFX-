@@ -8,6 +8,7 @@ import entity.supplierEntity;
 import entity.userEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import repository.custom.userDao;
@@ -105,5 +106,38 @@ public class userDaoImpl implements userDao {
             session.getTransaction().commit();
             session.close();
         }
+    }
+
+    @Override
+    public String getPW(String text) {
+
+        try
+        {
+            Session session = hibernateUtil.getSession();
+            session.getTransaction().begin();
+            ///////////////////////
+            Query<userEntity> query = session.createQuery("FROM userEntity e WHERE e.userEmail  = :value", userEntity.class);
+            query.setParameter("value", text);
+            userEntity entity = query.uniqueResult();
+            String pw=entity.getPassword();
+            ////////////////
+            session.getTransaction().commit();
+            session.close();
+
+            return pw;
+        }
+
+        catch (Exception ex)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Something Wrong!");
+
+            // Show the alert
+            alert.showAndWait();
+            return null;
+        }
+
     }
 }

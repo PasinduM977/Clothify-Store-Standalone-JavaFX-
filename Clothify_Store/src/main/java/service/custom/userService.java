@@ -15,4 +15,6 @@ public interface userService extends superService {
     boolean updateUser(user user, int i);
 
     boolean deleteUser(int i);
+
+    String getPassword(String text);
 }

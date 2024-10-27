@@ -1,6 +1,7 @@
 package service.custom.impl;
 
 import dto.product;
+import entity.orderDetailsEntity;
 import entity.productEntity;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
@@ -47,5 +48,12 @@ public class productServiceImpl implements productService {
     public boolean deleteProduct(int id) {
         productDao repo = repositoryFactory.getInstance().getDaoType(daoType.product);
         return repo.delete(id);
+    }
+
+    @Override
+    public boolean updateProductQty(ObservableList<orderDetailsEntity> orderDetailsObservableList) {
+        productDao repo = repositoryFactory.getInstance().getDaoType(daoType.product);
+
+        return repo.updatePqty(orderDetailsObservableList);
     }
 }

@@ -43,4 +43,10 @@ public class userServiceImpl implements userService {
         userDao repo = repositoryFactory.getInstance().getDaoType(daoType.user);
         return repo.delete(id);
     }
+
+    @Override
+    public String getPassword(String text) {
+        userDao repo = repositoryFactory.getInstance().getDaoType(daoType.user);
+        return repo.getPW(text);
+    }
 }

@@ -9,13 +9,14 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class order {
-    private int orderID;
+public class orders {
+
     private double totalCost;
     private String paymentType;
     private LocalDate orderDate;
-    private boolean status;
+    private String status;
     private int userID;
-    private int customerID;
+    private String customerName;
+    private String customerEmail;
 
 }

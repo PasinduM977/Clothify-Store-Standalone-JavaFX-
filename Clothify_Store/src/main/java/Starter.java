@@ -11,7 +11,7 @@ launch();
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/manageOrderForm.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/loginForm.fxml"))));
         stage.show();
     }
 }

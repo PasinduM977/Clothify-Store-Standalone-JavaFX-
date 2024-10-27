@@ -1,11 +1,21 @@
 package controller;
 
+import db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import org.hibernate.Session;
+import util.hibernateUtil;
 
 import java.io.IOException;
 
@@ -67,4 +77,14 @@ public class defaultDashboardFormController {
 
     }
 
+    public void btnProductReportonAction(ActionEvent actionEvent) {
+        try {
+            JasperDesign jasperDesign= JRXmlLoader.load("src/main/resources/reports/Blank_A4.jrxml");
+            JasperReport jasperReport= JasperCompileManager.compileReport(jasperDesign);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperViewer.viewReport(jasperPrint,false);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
 }

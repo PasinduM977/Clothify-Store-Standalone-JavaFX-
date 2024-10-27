@@ -3,6 +3,7 @@ package repository.custom.impl;
 import dto.product;
 import dto.supplier;
 import dto.user;
+import entity.orderDetailsEntity;
 import entity.productEntity;
 import entity.supplierEntity;
 import javafx.collections.FXCollections;
@@ -108,5 +109,20 @@ public class productDaoImpl implements productDao{
     @Override
     public boolean update(user user, int id) {
         return false;
+    }
+
+    @Override
+    public boolean updatePqty(ObservableList<orderDetailsEntity> orderDetailsObservableList) {
+        orderDetailsObservableList.forEach(orderDetailsEntity -> {
+
+                Session session = hibernateUtil.getSession();
+                session.getTransaction().begin();
+                productEntity entity = session.get(productEntity.class, orderDetailsEntity.getProductID());
+                entity.setAvailableQty(entity.getAvailableQty()-orderDetailsEntity.getQty());
+                session.getTransaction().commit();
+                session.close();
+
+        });
+        return true;
     }
 }
